@@ -2,6 +2,7 @@ import dgram from "node:dgram";
 import dnsPacket from "dns-packet";
 import epochService from "./services/epochData.js";
 import tpsService from "./services/tpsData.js";
+import blocktimeService from "./services/blockTimeData.js";
 
 // Create UDP server socket
 const server = dgram.createSocket("udp4");
@@ -37,6 +38,31 @@ server.on("message", async (msg, rinfo) => {
   else if (question.type === "TXT" && question.name === "tps-status.cli") {
     try {
       const lines = await tpsService.getTpsStatusLines();
+      
+      // Create a separate answer for each line
+      const answers = lines.map(line => ({
+        type: "TXT",
+        name: question.name,
+        class: "IN",
+        ttl: 60,
+        data: [line] // Each line as a separate TXT record
+      }));
+
+      const response = dnsPacket.encode({
+        type: "response",
+        id: incomingPacket.id,
+        questions: [question],
+        answers: answers
+      });
+
+      server.send(response, rinfo.port, rinfo.address);
+    } catch (err) {
+      console.error("Failed to handle TPS status request:", err.message);
+    }
+  }
+  else if (question.type === "TXT" && question.name === "blocktime-status.cli") {
+    try {
+      const lines = await blocktimeService.getBlockTimeStatusLines();
       
       // Create a separate answer for each line
       const answers = lines.map(line => ({
