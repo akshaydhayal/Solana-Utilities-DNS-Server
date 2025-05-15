@@ -8,6 +8,7 @@ import priceChartService from "./services/priceChartData.js";
 import solanaSupplyService from "./services/supplyData.js";
 import commandsService from "./services/commandsData.js";
 import stakeService from "./services/stakeData.js";  // Import the new stake service
+import stakeServiceGraph from "./services/stakeGraphData.js";  // Import the new stake service
 
 // Create UDP server socket
 const server = dgram.createSocket("udp4");
@@ -59,6 +60,10 @@ server.on("message", async (msg, rinfo) => {
         case "stake-stats.cli":  // Add new entry for stake statistics
           service = stakeService;
           lines = await stakeService.getStakeStats();
+          break;
+        case "stake-stats-graph.cli":  // Add new entry for stake statistics
+          service = stakeServiceGraph;
+          lines = await stakeServiceGraph.getStakeStatsGraph();
           break;
         case "help.cli":
           service = commandsService;

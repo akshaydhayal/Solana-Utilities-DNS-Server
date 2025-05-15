@@ -206,7 +206,7 @@ async function renderStakeStats(stakeData) {
     
     // Return combined output
     // return [...overview, "", ...epochChart, "", ...sizeTable, "", ...lastUpdateLine];
-    return [...overview, "", ...epochChart];
+    return [...epochChart];
   } catch (err) {
     console.error("Failed to render stake stats:", err.message);
     return ["Error processing stake statistics. Please try again later."];
@@ -234,7 +234,7 @@ async function updateCache() {
 
 // Function to get the pre-rendered stake stats
 // function getStakeStatsLines() {
-function getStakeStats() {
+function getStakeStatsGraph() {
   // If cache is empty or expired but we have stale data, return the stale data
   // while triggering a background refresh
   if (cache.renderedStats && cache.isExpired()) {
@@ -272,7 +272,7 @@ initializeCache().catch(err => {
 
 export default {
 //   getStakeStatsLines,
-  getStakeStats,
+  getStakeStatsGraph,
   forceRefresh: updateCache,  // Expose a method to force refresh if needed
   getCacheStatus: () => ({
     hasData: !!cache.data,
