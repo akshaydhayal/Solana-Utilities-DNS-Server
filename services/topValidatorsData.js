@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 const cache = {
   data: null,
   timestamp: 0,
-  ttl: 60000, // Cache TTL in milliseconds (1 minute)
+  ttl: 600000, // Cache TTL in milliseconds (1 minute)
   isExpired() {
     return Date.now() - this.timestamp > this.ttl;
   }
