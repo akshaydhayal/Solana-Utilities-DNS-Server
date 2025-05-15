@@ -167,4 +167,4 @@ server.on("message", async (msg, rinfo) => {
 });
 
 // Start the server
-server.bind(5353, () => console.log("DNS server running on port 5353 with on-demand caching"));
+server.bind(5353, () => console.log("Solana DNS server running on port 5353 with on-demand caching"));
