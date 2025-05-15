@@ -209,7 +209,7 @@ async function updateCache() {
     cache.renderedChart = renderedChart;
     cache.timestamp = Date.now();
 
-    console.log(`Cache updated successfully at ${new Date().toLocaleString()}`);
+    console.log(`Price Chart Cache data updated successfully at ${new Date().toLocaleString()}`);
     return true;
   } catch (err) {
     console.error("Failed to update cache:", err.message);
