@@ -212,7 +212,7 @@ async function renderPriceChart(priceData) {
       volume24h,
       timeRangeText,
       "",
-      ...chart,
+    //   ...chart,
       "",
       "Volume data shown corresponds to price movement",
       `Last updated: ${new Date().toLocaleString()}`
