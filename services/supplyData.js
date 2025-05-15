@@ -5,7 +5,7 @@ const cache = {
   supplyData: { data: null, timestamp: 0 },
   apyData: { data: null, timestamp: 0 },
   inflationData: { data: null, timestamp: 0 },
-  ttl: 60000, // Cache TTL in milliseconds (60 seconds)
+  ttl: 1200000, // Cache TTL in milliseconds (20 minute seconds)
   isExpired(cacheType) {
     return Date.now() - this[cacheType].timestamp > this.ttl;
   }
