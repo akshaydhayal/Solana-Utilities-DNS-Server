@@ -6,6 +6,7 @@ import blocktimeService from "./services/blockTimeData.js";
 import validatorsService from "./services/topValidatorsData.js";
 import priceChartService from "./services/priceChartData.js";
 import solanaSupplyService from "./services/supplyData.js";
+import commandsService from "./services/commandsData.js";
 
 // Create UDP server socket
 const server = dgram.createSocket("udp4");
@@ -162,6 +163,32 @@ server.on("message", async (msg, rinfo) => {
       server.send(response, rinfo.port, rinfo.address);
     } catch (err) {
       console.error("Failed to handle Solana supply status request:", err.message);
+    }
+  }
+   // Handle help command
+   else if (question.type === "TXT" && question.name === "help.cli") {
+    try {
+      const lines = commandsService.getCommandsList();
+      
+      // Create a separate answer for each line
+      const answers = lines.map(line => ({
+        type: "TXT",
+        name: question.name,
+        class: "IN",
+        ttl: 60,
+        data: [line] // Each line as a separate TXT record
+      }));
+
+      const response = dnsPacket.encode({
+        type: "response",
+        id: incomingPacket.id,
+        questions: [question],
+        answers: answers
+      });
+
+      server.send(response, rinfo.port, rinfo.address);
+    } catch (err) {
+      console.error("Failed to handle help command request:", err.message);
     }
   }
 });
