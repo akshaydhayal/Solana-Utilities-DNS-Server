@@ -143,7 +143,8 @@ function renderStakeSizeTable(stakeData) {
   tableStr += "\n";
 
   tableStr += "\n\n AVERAGE SOL STAKED SIZES\n";
-  tableStr += "---------------------------------\n";
+  // tableStr += "---------------------------------\n";
+  tableStr += "\n";
   tableStr += "SOL RANGE         | TOTAL SOL STAKED      | NUM STAKES | WALLETS   | VALIDATORS\n";
   tableStr += "------------------|-------------------|------------|-----------|----------\n";
   

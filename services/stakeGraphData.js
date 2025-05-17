@@ -87,7 +87,8 @@ function renderHorizontalBarChart(stakeData) {
   let output = "";
   // output += "================================================================\n\n\n";
   output += "SOLANA STAKE GROWTH OVER TIME (EPOCHS VS BALANCE)\n";
-  output += "---------------------------------\n";
+  // output += "---------------------------------\n";
+  output += "\n";
   
   // Select a subset of epochs to display (to keep output manageable)
   const displayCount = 12; // Number of epochs to display
@@ -106,7 +107,7 @@ function renderHorizontalBarChart(stakeData) {
   }
   
   // Maximum width for the bars
-  const maxBarWidth = 50;
+  const maxBarWidth = 33;
   
   // Display each epoch as a horizontal bar
   for (const epoch of displayEpochs) {
