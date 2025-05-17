@@ -23,7 +23,7 @@ No installation required! Just use standard DNS tools available on your system:
 
 ## Available Commands
 
-### `epoch`: 
+### `1. epoch`: 
 Provides current Solana epoch information.
 
 **Command:**
@@ -34,10 +34,10 @@ Provides current Solana epoch information.
 "EPOCH 788             TIME LEFT IN EPOCH"
 "[############----------------------------] 30.2%       33h 6m left"
 ```
-### `tps`
+### `2. tps`
 Retrieves transactions per second(TPS) statistics for last 1 hour.
 
-**Example:**
+**Command:**
 ```dig @3.82.20.22 -p 5353 tps TXT +short```
 
 **Response format:**
@@ -62,10 +62,10 @@ Retrieves transactions per second(TPS) statistics for last 1 hour.
 "2 mins ago   |  4147 TPS"
 ```
 
-### `blocktime`
+### 3. `blocktime`
 Shows block time statistics for the last 1 hour.
 
-**Example:**
+**Command:**
 ```dig @3.82.20.22 -p 5353 blocktime TXT +short```
 
 **Response format:**
@@ -90,10 +90,10 @@ Shows block time statistics for the last 1 hour.
 "2 mins ago   | 408.16 ms"
 ```
 
-### `top-validators`
+### `4. top-validators`
 Lists information about top 10 validators.
 
-**Example:**
+**Command:**
 ```dig @3.82.20.22 -p 5353 top-validators TXT +short```
 
 **Response format:**
@@ -112,10 +112,10 @@ Lists information about top 10 validators.
 "10. Unknown - 5.47M SOL - 100% commission - 20 delegators"
 ```
 
-### `price-chart`
+### `5. price-chart`
 Displays live SOL price and 24 hour price chart.
 
-**Example:**
+**Command:**
 ```dig @3.82.20.22 -p 5353 price-chart TXT +short```
 
 **Response format:**
@@ -138,10 +138,10 @@ Displays live SOL price and 24 hour price chart.
 "         05/16 05:28     05/16 17:28     05/17 04:58"
 ```
 
-### `sol-supply`
+### `6. sol-supply`
 Shows Solana supply statistics.
 
-**Example:**
+**Command:**
 ```dig @3.82.20.22 -p 5353 sol-supply TXT +short```
 
 **Response format:**
@@ -158,10 +158,10 @@ Shows Solana supply statistics.
 "---------------------"
 ```
 
-### `stake-data`
+### `7. stake-data`
 Provides SOL Staking statistics overview.
 
-**Example:**
+**Command:**
 ```dig @3.82.20.22 -p 5353 stake-data TXT +short```
 
 **Response format:**
@@ -178,10 +178,10 @@ Provides SOL Staking statistics overview.
 "UPDATED: 5 minutes ago"
 ```
 
-### `stake-graph`
+### `8. stake-graph`
 Displays a staked SOL chart distribution over epochs.
 
-**Example:**
+**Command:**
 ```dig @3.82.20.22 -p 5353 stake-graph TXT +short```
 
 **Response format:**
@@ -205,10 +205,10 @@ Displays a staked SOL chart distribution over epochs.
 " Stake SOL Range: MIN 80.99M SOL - MAX 411.23M SOL"
 ```
 
-### `stake-average-size`
+### `9. stake-average-size`
 Shows average staked SOL size statistics.
 
-**Example:**
+**Command:**
 ```dig @3.82.20.22 -p 5353 stake-average-size TXT +short```
 
 **Response format:**
@@ -233,10 +233,10 @@ Shows average staked SOL size statistics.
 "Last updated: 5/17/2025, 10:48:19 AM"
 ```
 
-### `help`
+### `10. help`
 Lists all available DNS commands.
 
-**Example:**
+**Command:**
 ```dig @3.82.20.22 -p 5353 help TXT +short ```
 
 **Response format:**
