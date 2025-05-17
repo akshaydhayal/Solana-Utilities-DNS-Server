@@ -103,7 +103,7 @@ function createAsciiPriceChart(priceData, width = 50, height = 10) {
     }),
     `       +${'-'.repeat(width)}+`,
     `         ${oldestTimestamp.padEnd(Math.floor(width/3))}${midTimestamp.padEnd(Math.floor(width/3))}${latestTimestamp}`,
-    `      ${'='.repeat(Math.floor(width/2))}TIME${'='.repeat(Math.floor(width/2))}`
+    // `      ${'='.repeat(Math.floor(width/2))}TIME${'='.repeat(Math.floor(width/2))}`
   ];
 
   return result;
@@ -188,9 +188,8 @@ async function renderPriceChart(priceData) {
     marketCapText,
     volume24h,
     // timeRangeText,
-    "",
     ...chart,
-    "",
+    
     // "Volume data shown corresponds to price movement",
     // `Last updated: ${new Date().toLocaleString()}`
   ];

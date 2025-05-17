@@ -206,7 +206,7 @@ async function renderStakeStats(stakeData) {
     
     // Return combined output
     // return [...overview, "", ...epochChart, "", ...sizeTable, "", ...lastUpdateLine];
-    return [...overview, "", ...epochChart];
+    return [...overview];
   } catch (err) {
     console.error("Failed to render stake stats:", err.message);
     return ["Error processing stake statistics. Please try again later."];

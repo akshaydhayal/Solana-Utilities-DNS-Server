@@ -139,12 +139,12 @@ function renderStakeSizeTable(stakeData) {
   
   // Build the table header
   let tableStr = "";
-  tableStr += "================================================================";
+  // tableStr += "================================================================";
   tableStr += "\n";
 
-  tableStr += "\n\n AVERAGE STAKE SIZES\n";
+  tableStr += "\n\n AVERAGE SOL STAKED SIZES\n";
   tableStr += "---------------------------------\n";
-  tableStr += "SOL RANGE         | TOTAL STAKED      | NUM STAKES | WALLETS   | VALIDATORS\n";
+  tableStr += "SOL RANGE         | TOTAL SOL STAKED      | NUM STAKES | WALLETS   | VALIDATORS\n";
   tableStr += "------------------|-------------------|------------|-----------|----------\n";
   
   // Add data rows
@@ -206,7 +206,7 @@ async function renderStakeStats(stakeData) {
     
     // Return combined output
     // return [...overview, "", ...epochChart, "", ...sizeTable, "", ...lastUpdateLine];
-    return [...epochChart];
+    return [...sizeTable, "", ...lastUpdateLine];
   } catch (err) {
     console.error("Failed to render stake stats:", err.message);
     return ["Error processing stake statistics. Please try again later."];
@@ -234,7 +234,7 @@ async function updateCache() {
 
 // Function to get the pre-rendered stake stats
 // function getStakeStatsLines() {
-function getStakeStatsGraph() {
+function getStakeAverageSize() {
   // If cache is empty or expired but we have stale data, return the stale data
   // while triggering a background refresh
   if (cache.renderedStats && cache.isExpired()) {
@@ -272,7 +272,7 @@ initializeCache().catch(err => {
 
 export default {
 //   getStakeStatsLines,
-  getStakeStatsGraph,
+  getStakeAverageSize,
   forceRefresh: updateCache,  // Expose a method to force refresh if needed
   getCacheStatus: () => ({
     hasData: !!cache.data,

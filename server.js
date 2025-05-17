@@ -9,6 +9,7 @@ import solanaSupplyService from "./services/supplyData.js";
 import commandsService from "./services/commandsData.js";
 import stakeService from "./services/stakeData.js";  // Import the new stake service
 import stakeServiceGraph from "./services/stakeGraphData.js";  // Import the new stake service
+import stakeServiceAverage from "./services/stakeAverageSizeData.js";  // Import the new stake service
 
 // Create UDP server socket
 const server = dgram.createSocket("udp4");
@@ -31,41 +32,45 @@ server.on("message", async (msg, rinfo) => {
     // Map question names to appropriate services
     if (question.type === "TXT") {
       switch (question.name) {
-        case "epoch-status.cli":
+        case "epoch":
           service = epochService;
           lines = await epochService.getEpochStatus();
           break;
-        case "tps-status.cli":
+        case "tps":
           service = tpsService;
           lines = await tpsService.getTpsStatusLines();
           break;
-        case "blocktime-status.cli":
+        case "blocktime":
           service = blocktimeService;
           lines = await blocktimeService.getBlockTimeStatusLines();
           break;
-        case "validators-status.cli":
+        case "top-validators":
           service = validatorsService;
           lines = await validatorsService.getTopValidatorsStatusLines();
           break;
-        case "price-chart.cli":
+        case "price-chart":
           service = priceChartService;
           // Get pre-rendered chart (no async/await here - should return immediately)
           lines = priceChartService.getPriceChartLines();
           console.log(`Retrieved ${lines.length} lines from price chart service`);
           break;
-        case "solana-supply.cli":
+        case "sol-supply":
           service = solanaSupplyService;
           lines = await solanaSupplyService.getSolanaSupplyStatusLines();
           break;
-        case "stake-stats.cli":  // Add new entry for stake statistics
+        case "stake-data":  // Add new entry for stake statistics
           service = stakeService;
           lines = await stakeService.getStakeStats();
           break;
-        case "stake-stats-graph.cli":  // Add new entry for stake statistics
+        case "stake-graph":  // Add new entry for stake statistics
           service = stakeServiceGraph;
           lines = await stakeServiceGraph.getStakeStatsGraph();
           break;
-        case "help.cli":
+        case "stake-average-size":  // Add new entry for stake statistics
+          service = stakeServiceAverage;
+          lines = await stakeServiceAverage.getStakeAverageSize();
+          break;
+        case "help":
           service = commandsService;
           lines = commandsService.getCommandsList();
           break;

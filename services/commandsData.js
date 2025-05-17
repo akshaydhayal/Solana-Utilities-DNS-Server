@@ -1,13 +1,15 @@
 // services/commandsData.js
 const commands = [
-    "epoch-status.cli         - Show current epoch progress",
-    "tps-status.cli           - Show Transactions per second(TPS) records",
-    "blocktime-status.cli     - Show blocktime metrics records",
-    "validators-status.cli    - Show top 10 Solana validators",
-    "price-chart.cli          - Show Solana price chart and metrics",
-    "solana-supply.cli        - Show Total Solana Supply and Stake Data",
-    "dig TXT stake-stats.cli  - Get Solana staking statistics",  
-    "help.cli                 - Show this command list"
+    "dig @3.82.20.22 -p 5353 epoch TXT +short               - Show current epoch progress",
+    "dig @3.82.20.22 -p 5353 tps TXT +short                 - Show Transactions per second(TPS) records",
+    "dig @3.82.20.22 -p 5353 blocktime TXT +short           - Show blocktime metrics records",
+    "dig @3.82.20.22 -p 5353 top-validators TXT +short      - Show top 10 Solana validators",
+    "dig @3.82.20.22 -p 5353 price-chart TXT +short         - Show Solana price chart and metrics",
+    "dig @3.82.20.22 -p 5353 sol-supply TXT +short          - Show Total Solana Supply and Stake Data",
+    "dig @3.82.20.22 -p 5353 stake-data TXT +short          - Get Solana staking statistics",  
+    "dig @3.82.20.22 -p 5353 stake-graph TXT +short         - Get Solana staking graph",  
+    "dig @3.82.20.22 -p 5353 stake-average-size TXT +short  - Get Solana average stake sizes",  
+    "dig @3.82.20.22 -p 5353 help TXT +short                - Show all commands list"
   ];
   
   function getCommandsList() {
