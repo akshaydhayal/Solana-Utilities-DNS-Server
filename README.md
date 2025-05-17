@@ -1,4 +1,4 @@
-# Solana DNS Protocol
+# Solana Data Utilities DNS Server
 
 A lightweight protocol that delivers Solana blockchain data through standard DNS queries. Get real-time Solana statistics without installing any dependencies or SDK - query directly from your command line.
 
@@ -13,6 +13,13 @@ No installation required! Just use standard DNS tools available on your system:
 **Using dig:**
 
 ```dig @3.82.20.22 -p 5353 <command> TXT +short```
+
+## Video Demo:
+
+[https://www.loom.com/share/45a00c1596c342a3b86950f2d685cada?sid=ac1e460e-576d-4394-b8af-e53e0e935c31
+](https://www.loom.com/share/45a00c1596c342a3b86950f2d685cada?sid=ac1e460e-576d-4394-b8af-e53e0e935c31
+)
+
 
 ## Available Commands
 
