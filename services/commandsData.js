@@ -14,7 +14,8 @@ const commands = [
   
   function getCommandsList() {
     return [
-      "AVAILABLE COMMANDS:",
+      "This is a DNS server that takes creative liberties with the DNS protocol to offer handy Solana utilities that are easily accessible via CLI without having to open a clunky search page. Copy and run the below commands to try it out",
+      "AVAILABLE DNS COMMANDS:",
       "-------------------",
       ...commands
     ];

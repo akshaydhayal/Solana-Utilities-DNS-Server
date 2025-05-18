@@ -79,7 +79,7 @@ server.on("message", async (msg, rinfo) => {
             "Cache Status Information",
             "-----------------------",
             JSON.stringify({
-              priceChart: priceChartService.getCacheStatus(),
+              // priceChart: priceChartService.getCacheStatus(),
               stake: stakeService.getCacheStatus()  // Add stake service cache status
             }, null, 2)
           ];
