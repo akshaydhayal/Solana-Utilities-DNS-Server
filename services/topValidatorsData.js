@@ -10,12 +10,14 @@ const cache = {
   }
 };
 
-const VALIDATORS_API = "https://api.solanabeach.io/v1/validators/top";
+// Updated API endpoint
+const VALIDATORS_API = "https://api.solanabeach.io/v2/validator-list";
 const API_KEY = "469ba747-f6d4-4995-a139-46ed89ac001e";
 
 // Format stake amount to human-readable format
 function formatStake(rawStake) {
-  const solAmount = rawStake / 1000000000; // Convert lamports to SOL
+  // Convert string to number and then to SOL
+  const solAmount = parseInt(rawStake) / 1000000000; // Convert lamports to SOL
   if (solAmount >= 1000000) {
     return `${(solAmount / 1000000).toFixed(2)}M SOL`;
   } else if (solAmount >= 1000) {
@@ -69,8 +71,11 @@ async function getTopValidatorsStatusLines() {
   try {
     const data = await getValidatorsData();
     
+    // The new API response structure has validatorList array
+    const validators = data.validatorList || [];
+    
     // Only take the top 10 validators
-    const top10 = data.slice(0, 10);
+    const top10 = validators.slice(0, 10);
     
     // Format the response
     const lines = [
@@ -79,10 +84,10 @@ async function getTopValidatorsStatusLines() {
     ];
     
     top10.forEach((validator, index) => {
-      const name = validator.moniker || "Unknown";
+      const name = validator.name || "Unknown";
       const stake = formatStake(validator.activatedStake);
       const commission = `${validator.commission}%`;
-      const delegators = validator.delegatorCount.toLocaleString();
+      const delegators = parseInt(validator.stakeAccounts).toLocaleString();
       
       lines.push(`${index + 1}. ${name} - ${stake} - ${commission} commission - ${delegators} delegators`);
     });
