@@ -262,7 +262,7 @@ Add a shortcut command ```dy``` which can be used like ```dy epoch```
 Add below Bash command to ~/.bashrc :
 
 ```
-alias dy="dig @3.82.20.22 -p 5353 TXT +short"
+alias dy="dig @3.82.20.22 -p 5353 +short"
 ```
 
 ## Self-Hosting
