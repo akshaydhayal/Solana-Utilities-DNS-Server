@@ -256,6 +256,14 @@ Lists all available DNS commands.
 "dig @3.82.20.22 -p 5353 help +short                - Show all commands list"
 ```
 
+## Shortcut functions
+Add a shortcut command ```dy``` which can be used like ```dy epoch```
+
+Add below Bash command to ~/.bashrc :
+
+```
+alias dy="dig @3.82.20.22 -p 5353 TXT +short"
+```
 
 ## Self-Hosting
 
@@ -282,6 +290,9 @@ This approach allows for cross-platform compatibility without requiring any spec
 - Data is cached to minimize API calls to Solana RPC endpoints
 - The service uses UDP on port 5353 by default
 - Each line of output is returned as a separate TXT record
+
+## Why?
+Why not? For fun. I spend a lot of time on the terminal and observing quick Solana Data without having to open a clunky search page is useful.
 
 ## License
 
