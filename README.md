@@ -12,7 +12,7 @@ No installation required! Just use standard DNS tools available on your system:
 
 **Using dig:**
 
-```dig @3.82.20.22 -p 5353 <command> TXT +short```
+```dig @3.82.20.22 -p 5353 <command> +short```
 
 ## Video Demo:
 
@@ -27,7 +27,7 @@ No installation required! Just use standard DNS tools available on your system:
 Provides current Solana epoch information.
 
 **Command:**
-```dig @3.82.20.22 -p 5353 epoch TXT +short ```
+```dig @3.82.20.22 -p 5353 epoch +short ```
 
 **Response format:**
 ```
@@ -38,7 +38,7 @@ Provides current Solana epoch information.
 Retrieves transactions per second(TPS) statistics for last 1 hour.
 
 **Command:**
-```dig @3.82.20.22 -p 5353 tps TXT +short```
+```dig @3.82.20.22 -p 5353 tps +short```
 
 **Response format:**
 ```
@@ -66,7 +66,7 @@ Retrieves transactions per second(TPS) statistics for last 1 hour.
 Shows block time statistics for the last 1 hour.
 
 **Command:**
-```dig @3.82.20.22 -p 5353 blocktime TXT +short```
+```dig @3.82.20.22 -p 5353 blocktime +short```
 
 **Response format:**
 ```
@@ -94,7 +94,7 @@ Shows block time statistics for the last 1 hour.
 Lists information about top 10 validators.
 
 **Command:**
-```dig @3.82.20.22 -p 5353 top-validators TXT +short```
+```dig @3.82.20.22 -p 5353 top-validators +short```
 
 **Response format:**
 ```
@@ -116,7 +116,7 @@ Lists information about top 10 validators.
 Displays live SOL price and 24 hour price chart.
 
 **Command:**
-```dig @3.82.20.22 -p 5353 price-chart TXT +short```
+```dig @3.82.20.22 -p 5353 price-chart +short```
 
 **Response format:**
 ```
@@ -142,7 +142,7 @@ Displays live SOL price and 24 hour price chart.
 Shows Solana supply statistics.
 
 **Command:**
-```dig @3.82.20.22 -p 5353 sol-supply TXT +short```
+```dig @3.82.20.22 -p 5353 sol-supply +short```
 
 **Response format:**
 ```
@@ -162,7 +162,7 @@ Shows Solana supply statistics.
 Provides SOL Staking statistics overview.
 
 **Command:**
-```dig @3.82.20.22 -p 5353 stake-data TXT +short```
+```dig @3.82.20.22 -p 5353 stake-data +short```
 
 **Response format:**
 ```
@@ -182,7 +182,7 @@ Provides SOL Staking statistics overview.
 Displays a staked SOL chart distribution over epochs.
 
 **Command:**
-```dig @3.82.20.22 -p 5353 stake-graph TXT +short```
+```dig @3.82.20.22 -p 5353 stake-graph +short```
 
 **Response format:**
 ```
@@ -209,7 +209,7 @@ Displays a staked SOL chart distribution over epochs.
 Shows average staked SOL size statistics.
 
 **Command:**
-```dig @3.82.20.22 -p 5353 stake-average-size TXT +short```
+```dig @3.82.20.22 -p 5353 stake-average-size +short```
 
 **Response format:**
 ```
@@ -237,23 +237,23 @@ Shows average staked SOL size statistics.
 Lists all available DNS commands.
 
 **Command:**
-```dig @3.82.20.22 -p 5353 help TXT +short ```
+```dig @3.82.20.22 -p 5353 help +short ```
 
 **Response format:**
 ```
 "This is a DNS server that takes creative liberties with the DNS protocol to offer handy Solana utilities that are easily accessible via CLI without having to open a clunky search page. Copy and run the below commands to try it out"
 "AVAILABLE DNS COMMANDS:"
 "-------------------"
-"dig @3.82.20.22 -p 5353 epoch TXT +short               - Show current epoch progress"
-"dig @3.82.20.22 -p 5353 tps TXT +short                 - Show Transactions per second(TPS) records"
-"dig @3.82.20.22 -p 5353 blocktime TXT +short           - Show blocktime metrics records"
-"dig @3.82.20.22 -p 5353 top-validators TXT +short      - Show top 10 Solana validators"
-"dig @3.82.20.22 -p 5353 price-chart TXT +short         - Show Solana price chart and metrics"
-"dig @3.82.20.22 -p 5353 sol-supply TXT +short          - Show Total Solana Supply and Stake Data"
-"dig @3.82.20.22 -p 5353 stake-data TXT +short          - Get Solana staking statistics"
-"dig @3.82.20.22 -p 5353 stake-graph TXT +short         - Get Solana staking graph"
-"dig @3.82.20.22 -p 5353 stake-average-size TXT +short  - Get Solana average stake sizes"
-"dig @3.82.20.22 -p 5353 help TXT +short                - Show all commands list"
+"dig @3.82.20.22 -p 5353 epoch +short               - Show current epoch progress"
+"dig @3.82.20.22 -p 5353 tps +short                 - Show Transactions per second(TPS) records"
+"dig @3.82.20.22 -p 5353 blocktime +short           - Show blocktime metrics records"
+"dig @3.82.20.22 -p 5353 top-validators +short      - Show top 10 Solana validators"
+"dig @3.82.20.22 -p 5353 price-chart +short         - Show Solana price chart and metrics"
+"dig @3.82.20.22 -p 5353 sol-supply +short          - Show Total Solana Supply and Stake Data"
+"dig @3.82.20.22 -p 5353 stake-data +short          - Get Solana staking statistics"
+"dig @3.82.20.22 -p 5353 stake-graph +short         - Get Solana staking graph"
+"dig @3.82.20.22 -p 5353 stake-average-size +short  - Get Solana average stake sizes"
+"dig @3.82.20.22 -p 5353 help +short                - Show all commands list"
 ```
 
 
