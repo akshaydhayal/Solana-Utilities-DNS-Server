@@ -11,8 +11,8 @@ const cache = {
 };
 
 // Updated API endpoint
-const VALIDATORS_API = "https://api.solanabeach.io/v2/validator-list";
-const API_KEY = "469ba747-f6d4-4995-a139-46ed89ac001e";
+const VALIDATORS_API = "https://api.solanaview.com/v2/validator-list";
+const API_KEY = "cff2e3b6-9440-415d-bc0d-9ccaf9c9d771";
 
 // Format stake amount to human-readable format
 function formatStake(rawStake) {
