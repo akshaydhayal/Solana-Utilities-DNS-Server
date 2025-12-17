@@ -12,8 +12,8 @@ const cache = {
 };
 
 // Updated API endpoint
-const PRICE_API = "https://api.solanabeach.io/v2/market-data";
-const API_KEY = "469ba747-f6d4-4995-a139-46ed89ac001e";
+const PRICE_API = "https://api.solanaview.com/v2/market-data";
+const API_KEY = "cff2e3b6-9440-415d-bc0d-9ccaf9c9d771";
 
 // Format large numbers to readable format with appropriate suffix
 function formatLargeNumber(num) {
