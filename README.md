@@ -14,13 +14,6 @@ No installation required! Just use standard DNS tools available on your system:
 
 ```dig @100.31.3.72 -p 5353 <command> +short```
 
-## Video Demo:
-
-[https://www.loom.com/share/45a00c1596c342a3b86950f2d685cada?sid=ac1e460e-576d-4394-b8af-e53e0e935c31
-](https://www.loom.com/share/45a00c1596c342a3b86950f2d685cada?sid=ac1e460e-576d-4394-b8af-e53e0e935c31
-)
-
-
 ## Available Commands
 
 ### `1. epoch`: 
