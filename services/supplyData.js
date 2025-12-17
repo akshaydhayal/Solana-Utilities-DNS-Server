@@ -17,10 +17,10 @@ const FALLBACK_VALUES = {
 };
 
 // API endpoints and auth
-const SOLANA_SUPPLY_API = "https://api.solanabeach.io/v2/supply-breakdown";
+const SOLANA_SUPPLY_API = "https://api.solanaview.com/v2/supply-breakdown";
 const SOLANA_APY_API = "https://api.solanabeach.io/v1/staking-apy";
 const SOLANA_INFLATION_API = "https://api.solanabeach.io/v1/inflation";
-const API_KEY = "469ba747-f6d4-4995-a139-46ed89ac001e";
+const API_KEY = "cff2e3b6-9440-415d-bc0d-9ccaf9c9d77";
 
 // Format large numbers to millions with one decimal point
 function formatToMillions(value) {
